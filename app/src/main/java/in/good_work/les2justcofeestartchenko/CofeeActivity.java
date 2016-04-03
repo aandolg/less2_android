@@ -1,37 +1,42 @@
 package in.good_work.les2justcofeestartchenko;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class CofeeActivity extends AppCompatActivity {
+
+public class CofeeActivity extends AppCompatActivity implements View.OnClickListener {
+    final static int COST_ONE_CUP = 5;
+    Button plusBt;
+    Button minusBt;
+    TextView quatityTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cofee);
+
+        plusBt = (Button) findViewById(R.id.plus_bt);
+        minusBt = (Button) findViewById(R.id.minus_bt);
+        quatityTv = (TextView) findViewById(R.id.quantity_tv);
+
+        plusBt.setOnClickListener(this);
+        minusBt.setOnClickListener(this);
+
+
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_cofee, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.plus_bt:
+                quatityTv.setText("Нажата кнопка Plus");
+                break;
+            case R.id.minus_bt:
+                quatityTv.setText("Нажата кнопка minus");
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
