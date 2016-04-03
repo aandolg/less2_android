@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Les2JustCofeeStartchenko</string>
+
+    <string name="quantity_tv">Quantity</string>
+    <string name="plus_bt">+</string>
+    <string name="minus_bt">-</string>
+    <string name="order_sum_tv">Order summ</string>
+    <string name="odrer_check_bt">Order</string>
+</resources>
